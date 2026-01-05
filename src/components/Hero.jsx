@@ -6,11 +6,45 @@ import './Hero.css';
 const Hero = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isPlaying, setIsPlaying] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('idle'); // idle, submitting, success, error
 
-  const handleInputCall = () => {
+  // REPLACE THIS WITH YOUR DEPLOYED GOOGLE APPS SCRIPT WEB APP URL
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5oil5-9z8XyT9jg5Ylgeg3SFrM3_vxnmyQ7N8valS24tLpTdN99ttRkMVHy2zs_Kshg/exec';
+
+  const handleInputCall = async () => {
     if (!phoneNumber) return;
-    // TODO: Implement actual call logic
-    console.log('Initiating call to:', phoneNumber);
+
+    setSubmitStatus('submitting');
+
+    // Simulate API call locally if URL is not set
+    if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE') {
+      console.warn('Please deploy the Google Apps Script and update the URL in Hero.jsx');
+      setTimeout(() => {
+        setSubmitStatus('success');
+        setPhoneNumber('');
+        setTimeout(() => setSubmitStatus('idle'), 3000);
+      }, 1000);
+      return;
+    }
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Required for Google Apps Script
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ phone: phoneNumber }),
+      });
+
+      setSubmitStatus('success');
+      setPhoneNumber('');
+      setTimeout(() => setSubmitStatus('idle'), 3000);
+    } catch (error) {
+      console.error('Error:', error);
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 3000);
+    }
   };
 
   const playSample = () => {
@@ -76,11 +110,30 @@ const Hero = () => {
             onChange={(e) => setPhoneNumber(e.target.value)}
             className="demo-input"
           />
-          <button className="call-demo-button" onClick={handleInputCall}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ marginRight: '0.5rem' }}>
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor" />
-            </svg>
-            Get Call
+          <button
+            className={`call-demo-button ${submitStatus}`}
+            onClick={handleInputCall}
+            disabled={submitStatus === 'submitting'}
+            style={{
+              opacity: submitStatus === 'submitting' ? 0.8 : 1,
+              cursor: submitStatus === 'submitting' ? 'wait' : 'pointer',
+              backgroundColor: submitStatus === 'success' ? '#10B981' : submitStatus === 'error' ? '#EF4444' : undefined
+            }}
+          >
+            {submitStatus === 'submitting' ? (
+              'Saving...'
+            ) : submitStatus === 'success' ? (
+              'Saved!'
+            ) : submitStatus === 'error' ? (
+              'Error'
+            ) : (
+              <>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ marginRight: '0.5rem' }}>
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor" />
+                </svg>
+                Get Call
+              </>
+            )}
           </button>
         </motion.div>
 
