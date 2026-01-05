@@ -1,0 +1,83 @@
+.pricing-card-gsap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 20px;
+    /* Remove overflow:hidden to allow 3D effect to pop out if needed, 
+       but usually we want to contain it. 
+       Actually, SVG is base layer. */
+}
+
+.card-svg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    /* Allow interaction with content */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.card-content-layer {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    color: white;
+    /* Ensure text is visible on dark SVG bg */
+}
+
+/* Ensure existing content styles work */
+.card-content-layer h3,
+.card-content-layer .plan-price,
+.card-content-layer .feature-value,
+.card-content-layer .feature-label,
+.card-content-layer .pilot-price {
+    color: #fff !important;
+    /* Force white text for contrast on new card */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-content-layer .pilot-price span,
+.card-content-layer .price-period {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.card-content-layer .feature-item {
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.card-content-layer .plan-features {
+    border-top-color: rgba(255, 255, 255, 0.1) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Pilot Card Button Override within GSAP Card */
+.card-content-layer .pilot-button {
+    background: #10b981;
+    /* Emerald green for Pilot distinction */
+    color: white;
+    border: none;
+    padding: 0.875rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    cursor: pointer;
+    margin-top: auto;
+    transition: all 0.2s ease;
+}
+
+.card-content-layer .pilot-button:hover {
+    background: #059669;
+    /* Darker emerald */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}

@@ -1,0 +1,46 @@
+.App {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--color-bg-body);
+  color: var(--color-text-primary);
+}
+
+/* Global section styling */
+section {
+  position: relative;
+  width: 100%;
+}
+
+.section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-top: 0.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .section-container {
+    padding: 0 var(--spacing-sm);
+  }
+}

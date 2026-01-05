@@ -1,0 +1,92 @@
+.media-showcase {
+    height: 100vh;
+    /* Make component tall enough to scroll through interaction */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: var(--spacing-sm);
+    overflow: hidden;
+    position: relative;
+    background: var(--color-bg-primary);
+}
+
+.media-container {
+    width: 100%;
+    /* Will scale down via transform */
+    max-width: 1400px;
+    /* Max cap */
+    aspect-ratio: 16/9;
+    position: sticky;
+    top: 100px;
+    /* Stick near top while scrolling */
+    overflow: hidden;
+    box-shadow: var(--shadow-2xl);
+    z-index: 10;
+}
+
+.showcase-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.media-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--spacing-2xl);
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+    color: white;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.5s forwards;
+}
+
+.media-overlay h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 700;
+}
+
+.media-overlay p {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .media-showcase {
+        height: auto;
+        padding: var(--spacing-md) 0;
+    }
+
+    .media-container {
+        position: relative;
+        top: 0;
+        width: 90% !important;
+        /* Mobile override */
+        border-radius: var(--radius-lg) !important;
+        aspect-ratio: 4/3;
+    }
+
+    .media-overlay {
+        padding: var(--spacing-md);
+    }
+
+    .media-overlay h2 {
+        font-size: var(--text-xl);
+    }
+}

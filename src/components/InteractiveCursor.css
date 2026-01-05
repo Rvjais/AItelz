@@ -1,0 +1,46 @@
+@media (min-width: 769px) {
+
+    body,
+    a,
+    button,
+    input,
+    textarea {
+        cursor: none !important;
+    }
+}
+
+.curzr-arrow-pointer {
+    box-sizing: border-box;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2147483647;
+    width: 20px;
+    height: 20px;
+    transition: 250ms, transform 100ms;
+    user-select: none;
+    pointer-events: none;
+}
+
+.curzr-arrow-pointer .inner {
+    fill: #F2F5F8;
+}
+
+.curzr-arrow-pointer .outer {
+    fill: #111920;
+}
+
+/*
+ Styles for .curzr, .circle, .dot are largely handled inline by the JS
+ to match the user's snippet exactly, but we can set some defaults or empty rules here
+ to ensure the file isn't empty.
+*/
+/* Styles injected by JS */
+/* Styles injected by JS */
+
+@media (max-width: 768px) {
+    .curzr-arrow-pointer {
+        display: none !important;
+    }
+}

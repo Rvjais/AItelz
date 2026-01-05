@@ -1,0 +1,55 @@
+.cta {
+  padding: 6rem 2rem;
+  background: #fafafa;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #e5e5e5;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.cta-subtitle {
+  font-size: 1.25rem;
+  color: #666666;
+  margin-bottom: 2.5rem;
+}
+
+.cta-button {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 1.25rem 3rem;
+  border-radius: 12px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #333333;
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 4rem 1rem;
+  }
+
+  .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}

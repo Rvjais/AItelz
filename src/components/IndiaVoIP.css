@@ -1,0 +1,113 @@
+.india-voip {
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  background: transparent;
+  border-top: 1px solid var(--color-border);
+}
+
+.voip-plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 1000px;
+  margin: 0 auto var(--spacing-lg);
+}
+
+.voip-plan-card {
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.voip-plan-card:hover {
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
+  background:
+    linear-gradient(var(--color-bg-secondary), var(--color-bg-secondary)) padding-box,
+    linear-gradient(45deg, #000000, #9ca3af) border-box;
+  border: 1px solid transparent;
+}
+
+.voip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.voip-header h3 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.voip-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.price-value {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.price-period {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.voip-rates {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rate-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.rate-type {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.rate-amount {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 768px) {
+  .india-voip {
+    padding: var(--spacing-xl) var(--spacing-sm);
+  }
+
+  .voip-plans {
+    grid-template-columns: 1fr;
+  }
+
+  .voip-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .voip-price {
+    align-items: flex-start;
+  }
+}

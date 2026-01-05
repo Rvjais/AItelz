@@ -1,0 +1,83 @@
+.what-aitelz-covers {
+  padding: var(--spacing-xl) var(--spacing-lg);
+  background: transparent;
+  border-top: 1px solid var(--color-border);
+}
+
+.section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  letter-spacing: -0.02em;
+}
+
+.covers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cover-card {
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.cover-card:hover {
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
+  background:
+    linear-gradient(var(--color-bg-primary), var(--color-bg-primary)) padding-box,
+    linear-gradient(45deg, #000000, #666666) border-box;
+  border: 1px solid transparent;
+}
+
+.cover-icon {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.cover-card h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.cover-card p {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .what-aitelz-covers {
+    padding: var(--spacing-xl) var(--spacing-sm);
+  }
+
+  .covers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cover-card {
+    padding: var(--spacing-lg);
+  }
+}

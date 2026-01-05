@@ -1,0 +1,197 @@
+.interactive-flow {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    background: var(--color-bg-primary);
+    overflow: hidden;
+}
+
+.flow-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+    /* Ensures vertical centering */
+    justify-items: center;
+    /* Horizontally center content in grid cells */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Shared styles for symmetry */
+.bot-animation-container,
+.flow-media-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 600px;
+    /* Fixed height for symmetry */
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: transparent;
+    aspect-ratio: 9/16;
+    /* Enforce same aspect ratio */
+}
+
+.bot-animation-container {
+    /* Specific adjustments if needed, but keeping generic for symmetry */
+    box-shadow: none;
+}
+
+.flow-media-wrapper {
+    /* Specific adjustments */
+    background: var(--color-bg-card);
+    box-shadow: var(--shadow-xl);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.flow-media-wrapper:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+
+.bot-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Contain to match the fit of the right side if desired, or cover */
+    display: block;
+}
+
+.flow-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    /* Center the wrapper in the column */
+}
+
+.flow-image,
+.flow-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+}
+
+.flow-image {
+    background: white;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.visible {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .flow-layout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+}
+
+/* Background Tape Styles */
+.interactive-flow {
+    position: relative;
+    /* Ensure absolute children are positioned relative to this */
+}
+
+.tape-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    /* Let clicks pass through */
+    z-index: 0;
+    /* Behind content */
+}
+
+.tape-top {
+    top: 5%;
+    transform: none;
+}
+
+.tape-bottom {
+    bottom: 5%;
+    transform: none;
+}
+
+.tape-scroll {
+    display: flex;
+    white-space: nowrap;
+}
+
+.tape-content {
+    flex-shrink: 0;
+    padding: 0 1rem;
+}
+
+.tape-item {
+    font-weight: bold;
+    font-size: 1.125rem;
+    /* text-lg */
+    padding: 0.75rem 2rem;
+    /* py-3 px-8 */
+    display: inline-block;
+    border-top: 4px solid;
+    border-bottom: 4px solid;
+    text-transform: uppercase;
+}
+
+.tape-caution .tape-item {
+    background-color: #facc15;
+    /* yellow-400 */
+    color: black;
+    border-color: black;
+}
+
+.tape-restricted .tape-item {
+    background-color: #dc2626;
+    /* red-600 */
+    color: white;
+    border-color: #7f1d1d;
+    /* red-900 */
+}
+
+/* Animations */
+.scroll-left {
+    animation: scroll 20s linear infinite;
+}
+
+.scroll-right {
+    animation: scrollReverse 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollReverse {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.flow-layout {
+    position: relative;
+    z-index: 1;
+    /* Ensure content stays above tape */
+}
