@@ -149,6 +149,8 @@
     max-width: 92%;
     height: auto;
     overflow: visible;
+    left: 4%;
+    transform: none !important;
   }
 
   .header-container {

@@ -64,6 +64,7 @@
     width: 100%;
     align-items: center;
     /* Center the wrapper in the column */
+    height: 70%;
 }
 
 .flow-image,

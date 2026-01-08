@@ -25,6 +25,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
+        {/* Brand Section */}
         <motion.div
           className="footer-brand"
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +42,8 @@ const Footer = () => {
           </p>
         </motion.div>
 
-        <div className="footer-links">
+        {/* Links Section */}
+        <div className="footer-links-wrapper">
           <motion.div
             className="footer-link-group"
             initial={{ opacity: 0, y: 20 }}
@@ -77,24 +79,35 @@ const Footer = () => {
           </motion.div>
         </div>
 
+        {/* Newsletter & Social Section */}
         <motion.div
-          className="footer-social"
+          className="footer-newsletter"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          {socialLinks.map((social, index) => (
-            <motion.a
-              key={index}
-              href="#"
-              className="social-icon"
-              whileHover={{ scale: 1.2, y: -2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              {social.name}
-            </motion.a>
-          ))}
+          <h4>Stay Updated</h4>
+          <p>Join our newsletter for the latest AI updates.</p>
+          <div className="newsletter-form">
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+          </div>
+
+          <div className="footer-social">
+            {socialLinks.map((social, index) => (
+              <motion.a
+                key={index}
+                href="#"
+                className="social-icon"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {/* Simple text representation for now, or actual icons if available */}
+                {social.name.substring(0, 2)}
+              </motion.a>
+            ))}
+          </div>
         </motion.div>
       </div>
     </footer>

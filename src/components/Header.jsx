@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
 import './Header.css';
 
 const Header = ({ onNavigateToCursor }) => {
@@ -30,9 +31,9 @@ const Header = ({ onNavigateToCursor }) => {
 
         {/* Desktop Nav */}
         <nav className="nav desktop-nav">
-          <motion.a href="#comparison" className="nav-link" whileHover={{ scale: 1.05 }}>Comparison</motion.a>
-          <motion.a href="#roi" className="nav-link" whileHover={{ scale: 1.05 }}>ROI Calculator</motion.a>
+          <motion.a href="#demo" className="nav-link" whileHover={{ scale: 1.05 }}>Demo</motion.a>
           <motion.a href="#pricing" className="nav-link" whileHover={{ scale: 1.05 }}>Pricing</motion.a>
+          <motion.a href="#roi" className="nav-link" whileHover={{ scale: 1.05 }}>ROI Calculator</motion.a>
           <motion.button
             className="demo-button"
             whileHover={{ scale: 1.05 }}
@@ -64,9 +65,9 @@ const Header = ({ onNavigateToCursor }) => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <a href="#comparison" onClick={toggleMenu}>Comparison</a>
-            <a href="#roi" onClick={toggleMenu}>ROI Calculator</a>
+            <a href="#demo" onClick={toggleMenu}>Demo</a>
             <a href="#pricing" onClick={toggleMenu}>Pricing</a>
+            <a href="#roi" onClick={toggleMenu}>ROI Calculator</a>
             <button className="demo-button" onClick={toggleMenu}>Book a Demo</button>
           </motion.nav>
         )}

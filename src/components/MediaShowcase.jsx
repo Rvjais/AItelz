@@ -19,7 +19,7 @@ const MediaShowcase = () => {
     const opacity = useTransform(scrollYProgress, [0, 0.2], [0.8, 1]);
 
     // Radius change for extra polish
-    const borderRadius = useTransform(scrollYProgress, [0, 0.5], ["32px", "0px"]);
+    const borderRadius = useTransform(scrollYProgress, [0, 0.5], ["32px", "24px"]);
 
     return (
         <section className="media-showcase" ref={containerRef}>

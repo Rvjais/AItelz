@@ -77,7 +77,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero">
+    <section className="hero" id="demo">
       <ParticlesBackground />
       <div className="hero-shape-container">
         <div className="hero-floating-shape"></div>
@@ -121,9 +121,9 @@ const Hero = () => {
             }}
           >
             {submitStatus === 'submitting' ? (
-              'Saving...'
+              'Ai Is Dialing your number'
             ) : submitStatus === 'success' ? (
-              'Saved!'
+              'Call Connected'
             ) : submitStatus === 'error' ? (
               'Error'
             ) : (

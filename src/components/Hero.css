@@ -102,7 +102,7 @@
 }
 
 .hero-title {
-  font-size: clamp(3rem, 8vw, 5rem);
+  font-size: clamp(2rem, 8vw, 5rem);
   font-weight: 800;
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-md);
@@ -195,35 +195,42 @@
 .input-group {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: var(--color-bg-primary);
-  padding: 0.375rem;
-  padding-left: 1.5rem;
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--color-border);
+  gap: 1rem;
+  /* background: var(--color-bg-primary); */
+  padding: 0;
+  /* padding-left: 1.5rem; */
+  /* border-radius: var(--radius-full); */
+  /* box-shadow: var(--shadow-lg); */
+  /* border: 1px solid var(--color-border); */
   transition: all var(--transition-base);
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
   margin: 0 auto;
 }
 
 .input-group:focus-within {
-  box-shadow: var(--shadow-xl);
-  /* Need to define or use LG */
-  border-color: var(--color-text-primary);
+  /* box-shadow: var(--shadow-xl); */
+  /* border-color: var(--color-text-primary); */
   transform: translateY(-2px);
 }
 
 .demo-input {
-  border: none;
-  background: transparent;
-  padding: 0.5rem 0;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-primary);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-full);
   font-size: var(--text-base);
   outline: none;
-  width: 100%;
+  flex: 1;
   color: var(--color-text-primary);
   font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.demo-input:focus {
+  border-color: var(--color-text-primary);
+  box-shadow: var(--shadow-md);
 }
 
 .demo-input::placeholder {
@@ -242,20 +249,23 @@
 @media (max-width: 768px) {
   .input-group {
     flex-direction: column;
-    padding: 1rem;
+    padding: 0;
     width: 100%;
     align-items: stretch;
-    border-radius: var(--radius-lg);
+    gap: 1rem;
+    background: transparent;
+    border: none;
+    box-shadow: none;
   }
 
   .demo-input {
     text-align: center;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 1rem;
-    margin-bottom: 0.5rem;
+    width: 100%;
+    margin-bottom: 0;
   }
 
   .input-group .call-demo-button {
     width: 100%;
+    justify-content: center;
   }
 }

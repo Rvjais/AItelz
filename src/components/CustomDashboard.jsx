@@ -7,16 +7,34 @@ import historyImg from '../assets/History.png';
 import loginImg from '../assets/login.png';
 import paymentImg from '../assets/payment.png';
 
+// Import Global/Foreign Dashboard Images
+import fLogsImg from '../assets/Flogs.png';
+import fLeadsImg from '../assets/Fleads.png';
+import fCampaignImg from '../assets/Fcampaign.png';
+import fDashboardImg from '../assets/Fdashboard.png';
+import fWorkflowsImg from '../assets/Fworkflows.png';
+
 const CustomDashboard = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [dashboardType, setDashboardType] = useState('india'); // 'india' or 'global'
 
-  const images = [
+  const indiaImages = [
     { src: dashboardImg, alt: 'Dashboard Analytics' },
     { src: expensesImg, alt: 'Expenses View' },
     { src: historyImg, alt: 'Call History' },
     { src: paymentImg, alt: 'Billing & Payments' },
     { src: loginImg, alt: 'Secure Login' }
   ];
+
+  const globalImages = [
+    { src: fDashboardImg, alt: 'Global Dashboard' },
+    { src: fLogsImg, alt: 'Call Logs' },
+    { src: fLeadsImg, alt: 'Lead Management' },
+    { src: fCampaignImg, alt: 'Campaign Manager' },
+    { src: fWorkflowsImg, alt: 'Workflow Automation' }
+  ];
+
+  const images = dashboardType === 'india' ? indiaImages : globalImages;
 
   const openImage = (index) => setSelectedImageIndex(index);
   const closeImage = () => setSelectedImageIndex(null);
@@ -176,7 +194,6 @@ const CustomDashboard = () => {
           </motion.div>
         </div>
 
-
         <motion.div
           className="dashboard-gallery"
           initial={{ opacity: 0, y: 40 }}
@@ -184,6 +201,29 @@ const CustomDashboard = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
+          {/* Dashboard Toggle */}
+          <div className="dashboard-toggle-container">
+            <div className="dashboard-toggle">
+              <div
+                className={`toggle-option ${dashboardType === 'india' ? 'active' : ''}`}
+                onClick={() => setDashboardType('india')}
+              >
+                Indian VoIP
+              </div>
+              <div
+                className={`toggle-option ${dashboardType === 'global' ? 'active' : ''}`}
+                onClick={() => setDashboardType('global')}
+              >
+                International VoIP
+              </div>
+              <div
+                className="toggle-slider"
+                style={{
+                  transform: dashboardType === 'india' ? 'translateX(0)' : 'translateX(100%)'
+                }}
+              />
+            </div>
+          </div>
           <button className="gallery-scroll-btn left" onClick={() => scrollGallery('left')}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg>
           </button>
@@ -200,9 +240,45 @@ const CustomDashboard = () => {
             ))}
           </div>
 
+
           <button className="gallery-scroll-btn right" onClick={() => scrollGallery('right')}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
           </button>
+        </motion.div>
+
+        {/* Comparison Table */}
+        <motion.div
+          className="comparison-table-section"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <div className="table-container">
+            <h3 className="comparison-title">Why choose International VoIP?</h3>
+            <div className="comparison-table">
+              <div className="table-header">
+                <div className="header-cell feature-col">Feature</div>
+                <div className="header-cell india-col">Indian VoIP</div>
+                <div className="header-cell global-col">International VoIP</div>
+              </div>
+              <div className="table-body">
+                {[
+                  { feature: 'Caller ID', india: '+91 Landline (Compliance Ready)', global: 'International Mobile / Local' },
+                  { feature: 'Setup Time', india: '24 - 48 Hours', global: 'Instant Activation' },
+                  { feature: 'KYC Docs', india: 'Mandatory (TRAI Norms)', global: 'Minimal / On-demand' },
+                  { feature: 'Pricing', india: 'Starting ₹19,999/mo', global: 'Custom (Pay-as-you-go)' },
+                  { feature: 'Ideal For', india: 'Domestic Outreach', global: 'Global Expansion' }
+                ].map((row, index) => (
+                  <div className="table-row" key={index}>
+                    <div className="cell feature-cell">{row.feature}</div>
+                    <div className="cell india-cell">{row.india}</div>
+                    <div className="cell global-cell">{row.global}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
 

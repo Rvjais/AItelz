@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import InteractiveCursor from './components/InteractiveCursor';
+import AutoScrollHandler from './components/AutoScrollHandler';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import MediaShowcase from './components/MediaShowcase';
@@ -15,6 +16,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
+      <AutoScrollHandler />
       <Header />
       <Hero />
       <MediaShowcase />

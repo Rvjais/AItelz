@@ -10,16 +10,14 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Small',
-      monthlyPrice: '₹19,999',
-      annualPrice: '₹19,999',
+      monthlyPrice: 19999,
       minutes: '2,000',
       concurrentCalls: '10',
       borderColor: '#3B82F6'
     },
     {
       name: 'Medium',
-      monthlyPrice: '₹69,999',
-      annualPrice: '₹69,999',
+      monthlyPrice: 69999,
       minutes: '10,000',
       concurrentCalls: '20',
       borderColor: '#A855F7',
@@ -27,8 +25,7 @@ const Pricing = () => {
     },
     {
       name: 'Large',
-      monthlyPrice: '₹1,99,999',
-      annualPrice: '₹1,99,999',
+      monthlyPrice: 199999,
       minutes: '35,000',
       concurrentCalls: '50',
       borderColor: '#F97316'
@@ -42,6 +39,14 @@ const Pricing = () => {
     'Calendar Integration',
     'Custom Voice Training'
   ];
+
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('en-IN', {
+      style: 'currency',
+      currency: 'INR',
+      maximumFractionDigits: 0
+    }).format(price);
+  };
 
   return (
     <section className="pricing" id="pricing">
@@ -103,46 +108,56 @@ const Pricing = () => {
             </PricingCard>
           </motion.div>
 
-          {plans.map((plan, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              style={{ height: '100%' }} // Ensure motion div takes height for card
-            >
-              <PricingCard borderColor={plan.borderColor} className={plan.popular ? 'popular' : ''}>
-                {plan.popular && (
-                  <div className="popular-badge">MOST POPULAR</div>
-                )}
-                <h3>{plan.name}</h3>
-                <div className="plan-price">
-                  {isAnnual ? plan.annualPrice : plan.monthlyPrice}
-                  <span className="price-period">/month</span>
-                </div>
-                <div className="plan-features">
-                  <div className="feature-item">
-                    <span className="feature-value">{plan.minutes}</span>
-                    <span className="feature-label">minutes</span>
+          {plans.map((plan, index) => {
+            const displayPrice = isAnnual ? plan.monthlyPrice * 11 : plan.monthlyPrice;
+            const savings = plan.monthlyPrice; // Save 1 month cost
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                style={{ height: '100%' }} // Ensure motion div takes height for card
+              >
+                <PricingCard borderColor={plan.borderColor} className={plan.popular ? 'popular' : ''}>
+                  {plan.popular && (
+                    <div className="popular-badge">MOST POPULAR</div>
+                  )}
+                  <h3>{plan.name}</h3>
+                  <div className="plan-price">
+                    {formatPrice(displayPrice)}
+                    <span className="price-period">/{isAnnual ? 'year' : 'month'}</span>
                   </div>
-                  <div className="feature-item">
-                    <span className="feature-value">{plan.concurrentCalls}</span>
-                    <span className="feature-label">concurrent calls</span>
+                  {isAnnual && (
+                    <div className="price-savings" style={{ color: '#10b981', fontSize: '0.9rem', marginBottom: '1rem', fontWeight: '600' }}>
+                      Save {formatPrice(savings)}
+                    </div>
+                  )}
+                  <div className="plan-features">
+                    <div className="feature-item">
+                      <span className="feature-value">{plan.minutes}</span>
+                      <span className="feature-label">minutes</span>
+                    </div>
+                    <div className="feature-item">
+                      <span className="feature-value">{plan.concurrentCalls}</span>
+                      <span className="feature-label">concurrent calls</span>
+                    </div>
                   </div>
-                </div>
-                <motion.button
-                  className={`select-plan-button ${plan.popular ? 'popular-button' : ''}`}
-                  style={{ backgroundColor: plan.borderColor }}
-                  whileHover={{ scale: 1.05, boxShadow: `0 8px 20px ${plan.borderColor}40` }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Select Plan
-                </motion.button>
-              </PricingCard>
-            </motion.div>
-          ))}
+                  <motion.button
+                    className={`select-plan-button ${plan.popular ? 'popular-button' : ''}`}
+                    style={{ backgroundColor: plan.borderColor }}
+                    whileHover={{ scale: 1.05, boxShadow: `0 8px 20px ${plan.borderColor}40` }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Select Plan
+                  </motion.button>
+                </PricingCard>
+              </motion.div>
+            );
+          })}
         </div>
 
         <motion.div
