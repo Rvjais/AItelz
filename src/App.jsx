@@ -3,6 +3,7 @@ import InteractiveCursor from './components/InteractiveCursor';
 import AutoScrollHandler from './components/AutoScrollHandler';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import SplineBot from './components/SplineBot';
 import MediaShowcase from './components/MediaShowcase';
 import WhatAitelzCovers from './components/WhatAitelzCovers';
 import CostComparison from './components/CostComparison';
@@ -18,7 +19,8 @@ function App() {
     <div className="App">
       <AutoScrollHandler />
       <Header />
-      <Hero />
+      <SplineBot />
+      {/* <Hero /> - Temporarily removed, file kept */}
       <MediaShowcase />
       <div style={{ position: 'relative' }}>
         <InteractiveCursor />
