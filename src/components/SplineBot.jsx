@@ -1,4 +1,5 @@
 import Spline from '@splinetool/react-spline';
+import VoiceCarousel from './VoiceCarousel';
 import { useState, useEffect } from 'react';
 import './SplineBot.css';
 
@@ -56,8 +57,7 @@ export default function SplineBot() {
 
             {/* Desktop: Bottom right info */}
             <div className="info-box bottom-right">
-                <h3><Typewriter text="Why AItelz?" delay={40} startDelay={1200} /></h3>
-                <p><Typewriter text="• 90% cost reduction  • 24/7 availability  • Instant scaling" delay={25} startDelay={2400} /></p>
+                <VoiceCarousel />
             </div>
 
             {/* Mobile: Bottom info bar */}

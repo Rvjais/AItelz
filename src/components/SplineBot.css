@@ -52,7 +52,10 @@
 .info-box.bottom-right {
     bottom: 30px;
     right: 30px;
-    text-align: right;
+    /* text-align: right; Remove text align right as the carousel controls alignment */
+    width: 300px;
+    /* Increased from max-width 260px implicitly */
+    max-width: 320px;
 }
 
 .info-box h3 {
