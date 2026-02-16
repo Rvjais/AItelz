@@ -93,8 +93,23 @@
 
 @media (max-width: 768px) {
     .flow-layout {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flow-content-wrapper {
+        display: none;
+    }
+
+    .bot-animation-container {
+        height: 380px;
+        width: auto;
+        border-radius: var(--radius-lg);
+    }
+
+    .interactive-flow {
+        padding: var(--spacing-xl) var(--spacing-xs);
     }
 }
 
