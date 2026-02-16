@@ -68,7 +68,10 @@ const Header = ({ onNavigateToCursor }) => {
             <a href="#demo" onClick={toggleMenu}>Demo</a>
             <a href="#pricing" onClick={toggleMenu}>Pricing</a>
             <a href="#roi" onClick={toggleMenu}>ROI Calculator</a>
-            <button className="demo-button" onClick={toggleMenu}>Book a Demo</button>
+            <button className="demo-button" ><a href="https://wa.me/919648165493?text=Hello%20AItelz%20im%20intrested%20i%20the%20voice%20chatbot" target="_blank">
+              Book a Demo
+            </a>
+            </button>
           </motion.nav>
         )}
       </AnimatePresence>

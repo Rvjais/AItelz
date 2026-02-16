@@ -35,7 +35,8 @@
 }
 
 .toggle-switch.annual {
-  background: var(--color-text-primary);
+  background: var(--color-accent);
+  /* Use orange accent */
 }
 
 .toggle-slider {

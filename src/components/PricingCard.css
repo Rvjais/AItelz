@@ -60,6 +60,16 @@
     border-bottom-color: rgba(255, 255, 255, 0.1) !important;
 }
 
+/* Fix for Pilot Card Features List */
+.card-content-layer .pilot-features li {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.card-content-layer .pilot-features li::before {
+    color: #10b981 !important;
+    /* Emerald green checkmark */
+}
+
 /* Pilot Card Button Override within GSAP Card */
 .card-content-layer .pilot-button {
     background: #10b981;
