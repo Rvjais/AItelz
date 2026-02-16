@@ -7,9 +7,15 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor': ['react', 'react-dom', 'framer-motion'],
-          'spline': ['@splinetool/react-spline', '@splinetool/runtime'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('framer-motion')) {
+              return 'vendor';
+            }
+            if (id.includes('@splinetool')) {
+              return 'spline';
+            }
+          }
         }
       }
     }
