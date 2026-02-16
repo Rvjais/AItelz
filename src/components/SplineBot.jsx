@@ -33,9 +33,27 @@ function Typewriter({ text, delay = 50, startDelay = 0 }) {
 }
 
 export default function SplineBot() {
+    const [sceneUrl, setSceneUrl] = useState('/desktop.splinecode');
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 768) {
+                setSceneUrl('/mobile.splinecode');
+            } else {
+                setSceneUrl('/desktop.splinecode');
+            }
+        };
+
+        // Initial check
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <div className="spline-wrapper">
-            <Spline scene="/scene.splinecode" />
+            <Spline scene={sceneUrl} />
 
             {/* Desktop: Top left info */}
             <div className="info-box top-left">
@@ -49,10 +67,8 @@ export default function SplineBot() {
                 <p><Typewriter text="Secure, scalable, and compliant with industry standards." delay={25} startDelay={1600} /></p>
             </div>
 
-            {/* Desktop: Bottom left info */}
+            {/* Desktop: Bottom left info - REMOVED as per user request */}
             <div className="info-box bottom-left">
-                <h3><Typewriter text="AI-Powered Voice Agents" delay={40} startDelay={900} /></h3>
-                <p><Typewriter text="Replace your call center with intelligent AI agents that handle calls 24/7." delay={25} startDelay={2000} /></p>
             </div>
 
             {/* Desktop: Bottom right info */}
@@ -60,14 +76,7 @@ export default function SplineBot() {
                 <VoiceCarousel />
             </div>
 
-            {/* Mobile: Bottom info bar */}
-            <div className="mobile-info">
-                <h2><Typewriter text="AI-Powered Voice Agents" delay={40} startDelay={500} /></h2>
-                <p><Typewriter text="Replace your call center with intelligent AI that handles calls 24/7" delay={25} startDelay={1500} /></p>
-                <div className="scroll-indicator">
-                    <span></span>
-                </div>
-            </div>
+
         </div>
     );
 }

@@ -1,7 +1,17 @@
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import './HowToGetStarted.css';
 
 const HowToGetStarted = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Animate the path length based on scroll
+  const pathLength = useTransform(scrollYProgress, [0.1, 0.9], [0, 1]);
+
   const steps = [
     {
       number: '1',
@@ -26,7 +36,7 @@ const HowToGetStarted = () => {
   ];
 
   return (
-    <section className="how-to-get-started" id="get-started">
+    <section className="how-to-get-started" id="get-started" ref={containerRef}>
       <div className="section-container">
         <motion.div
           className="section-header"
@@ -41,39 +51,45 @@ const HowToGetStarted = () => {
           </p>
         </motion.div>
 
-        <div className="steps-container">
-          {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              className="step-card"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              whileHover={{ scale: 1.05, y: -5 }}
-            >
-              <motion.div
-                className="step-number"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 + 0.2, type: "spring" }}
-              >
-                {step.number}
-              </motion.div>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-              {index < steps.length - 1 && (
+        <div className="steps-wrapper">
+          {/* SVG Connector Line */}
+          <div className="svg-container">
+            <svg viewBox="0 0 100 1000" preserveAspectRatio="none">
+              <motion.path
+                d="M50,0 C50,100 20,100 20,200 C20,300 80,300 80,450 C80,600 20,600 20,750 C20,900 80,900 80,1000"
+                className="connector-path-bg"
+              />
+              <motion.path
+                d="M50,0 C50,100 20,100 20,200 C20,300 80,300 80,450 C80,600 20,600 20,750 C20,900 80,900 80,1000"
+                className="connector-path-fill"
+                style={{ pathLength }}
+              />
+            </svg>
+          </div>
+
+          <div className="steps-list">
+            {steps.map((step, index) => (
+              <div key={index} className={`step-row ${index % 2 === 0 ? 'left' : 'right'}`}>
                 <motion.div
-                  className="step-connector"
-                  initial={{ scaleY: 0 }}
-                  whileInView={{ scaleY: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.15 + 0.4 }}
-                />
-              )}
-            </motion.div>
-          ))}
+                  className="step-card"
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className="step-number">
+                    {step.number}
+                  </div>
+                  <div className="step-content">
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                </motion.div>
+                <div className="step-spacer"></div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

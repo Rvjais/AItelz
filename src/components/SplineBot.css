@@ -139,82 +139,63 @@
     /* Zoom out Spline on mobile */
     .spline-wrapper>div:first-child,
     .spline-wrapper canvas {
-        transform: scale(0.55) translateY(15%);
-        transform-origin: center center;
+        width: 100% !important;
+        height: 100% !important;
+        top: 0 !important;
+        transform: none !important;
     }
 
     .info-box {
-        display: none;
-    }
-
-    .mobile-info {
         display: block;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
-        padding: 80px 20px 40px;
-        z-index: 100;
+        padding: 8px 10px;
+        max-width: 38%;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    .mobile-info h2 {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #fff;
-        margin: 0 0 8px;
+    .info-box.top-left {
+        top: 80px;
+        left: 10px;
+    }
+
+    .info-box.top-right {
+        top: 80px;
+        right: 10px;
+        text-align: right;
+    }
+
+    .info-box.bottom-left {
+        bottom: 80px;
+        left: 10px;
+    }
+
+    .info-box.bottom-right {
+        bottom: 20px;
+        right: 10px;
+        width: auto;
+        max-width: 90%;
+        left: 10px;
+        /* Center it */
         text-align: center;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    .mobile-info p {
-        font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.85);
-        margin: 0;
-        text-align: center;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    .info-box h3 {
+        font-size: 0.7rem;
+        margin-bottom: 3px;
     }
 
-    .mobile-info .cursor {
-        color: #a78bfa;
+    .info-box p {
+        font-size: 0.55rem;
+        line-height: 1.1;
     }
 
-    .scroll-indicator {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-
-    .scroll-indicator span {
-        width: 24px;
-        height: 40px;
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        border-radius: 12px;
-        position: relative;
-    }
-
-    .scroll-indicator span::before {
-        content: '';
-        position: absolute;
-        top: 8px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 4px;
-        height: 8px;
-        background: rgba(255, 255, 255, 0.7);
-        border-radius: 2px;
-        animation: scroll 2s infinite;
-    }
-
-    @keyframes scroll {
-        0% {
-            opacity: 1;
-            top: 8px;
-        }
-
-        100% {
-            opacity: 0;
-            top: 20px;
-        }
+    /* Hide the old bottom bar and cursor */
+    .mobile-info,
+    .scroll-indicator,
+    .cursor {
+        display: none !important;
     }
 }
