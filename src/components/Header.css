@@ -135,9 +135,14 @@
 }
 
 .mobile-nav .demo-button {
-  margin-top: 1.5rem;
-  width: 100%;
+  margin-top: 0.5rem;
+  width: auto;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.9rem;
+  min-width: 140px;
 }
 
 @media (max-width: 768px) {

@@ -85,8 +85,7 @@ export default function SplineBot() {
             </div>
 
             {/* Desktop: Bottom left info - REMOVED as per user request */}
-            <div className="info-box bottom-left">
-            </div>
+
 
             {/* Desktop: Bottom right info */}
             <div className="info-box bottom-right">
