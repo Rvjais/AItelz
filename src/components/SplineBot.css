@@ -145,6 +145,16 @@
         transform: none !important;
     }
 
+    .mobile-video-bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
     .info-box {
         display: block;
         padding: 8px 10px;

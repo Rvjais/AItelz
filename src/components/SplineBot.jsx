@@ -1,6 +1,6 @@
 import Spline from '@splinetool/react-spline';
 import VoiceCarousel from './VoiceCarousel';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './SplineBot.css';
 
 // Typewriter component
@@ -33,15 +33,20 @@ function Typewriter({ text, delay = 50, startDelay = 0 }) {
 }
 
 export default function SplineBot() {
-    const [sceneUrl, setSceneUrl] = useState(() => window.innerWidth <= 768 ? '/mobile.splinecode' : '/desktop.splinecode');
+    // const [sceneUrl, setSceneUrl] = useState(() => window.innerWidth <= 768 ? '/mobile.splinecode' : '/desktop.splinecode');
+    const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
+    const videoRef = useRef(null);
+
+    const handleTimeUpdate = () => {
+        if (videoRef.current && videoRef.current.currentTime >= 15) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.play();
+        }
+    };
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth <= 768) {
-                setSceneUrl('/mobile.splinecode');
-            } else {
-                setSceneUrl('/desktop.splinecode');
-            }
+            setIsMobile(window.innerWidth <= 768);
         };
 
         // Initial check
@@ -53,7 +58,19 @@ export default function SplineBot() {
 
     return (
         <div className="spline-wrapper">
-            <Spline scene={sceneUrl} />
+            {isMobile ? (
+                <video
+                    ref={videoRef}
+                    src="/splineMobile.mp4"
+                    autoPlay
+                    muted
+                    playsInline
+                    className="mobile-video-bg"
+                    onTimeUpdate={handleTimeUpdate}
+                />
+            ) : (
+                <Spline scene="/desktop.splinecode" />
+            )}
 
             {/* Desktop: Top left info */}
             <div className="info-box top-left">
