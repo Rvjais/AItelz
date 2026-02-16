@@ -33,7 +33,7 @@ function Typewriter({ text, delay = 50, startDelay = 0 }) {
 }
 
 export default function SplineBot() {
-    const [sceneUrl, setSceneUrl] = useState('/desktop.splinecode');
+    const [sceneUrl, setSceneUrl] = useState(() => window.innerWidth <= 768 ? '/mobile.splinecode' : '/desktop.splinecode');
 
     useEffect(() => {
         const handleResize = () => {
