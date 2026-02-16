@@ -26,7 +26,7 @@
 }
 
 .nav-btn {
-    background: rgba(0,0,0,0.05);
+    background: rgba(0, 0, 0, 0.05);
     border: none;
     border-radius: 50%;
     width: 24px;
@@ -42,7 +42,7 @@
 }
 
 .nav-btn:hover {
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
     color: #000;
 }
 
@@ -53,13 +53,13 @@
     overflow-x: auto;
     padding: 10px 0;
     /* Hide scrollbar */
-    scrollbar-width: none; 
+    scrollbar-width: none;
     -ms-overflow-style: none;
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.carousel-track::-webkit-scrollbar { 
-    display: none; 
+.carousel-track::-webkit-scrollbar {
+    display: none;
 }
 
 .voice-card {
@@ -82,7 +82,7 @@
 .voice-visual {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -93,13 +93,14 @@
 }
 
 .voice-card.active .voice-visual {
-    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
     color: white;
 }
 
 .play-icon {
     font-size: 0.8rem;
-    margin-left: 2px; /* Visual centering adjustment */
+    margin-left: 2px;
+    /* Visual centering adjustment */
 }
 
 .voice-name {
@@ -129,14 +130,36 @@
     animation: bounce 1s infinite ease-in-out;
 }
 
-.equalizer span:nth-child(1) { height: 6px; animation-delay: 0.1s; }
-.equalizer span:nth-child(2) { height: 10px; animation-delay: 0.3s; }
-.equalizer span:nth-child(3) { height: 8px; animation-delay: 0.5s; }
-.equalizer span:nth-child(4) { height: 5px; animation-delay: 0.2s; }
+.equalizer span:nth-child(1) {
+    height: 6px;
+    animation-delay: 0.1s;
+}
+
+.equalizer span:nth-child(2) {
+    height: 10px;
+    animation-delay: 0.3s;
+}
+
+.equalizer span:nth-child(3) {
+    height: 8px;
+    animation-delay: 0.5s;
+}
+
+.equalizer span:nth-child(4) {
+    height: 5px;
+    animation-delay: 0.2s;
+}
 
 @keyframes bounce {
-    0%, 100% { transform: scaleY(1); }
-    50% { transform: scaleY(1.8); }
+
+    0%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(1.8);
+    }
 }
 
 .current-voice-status {

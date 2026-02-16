@@ -1,10 +1,12 @@
-import { useState } from 'react';
-import InteractiveCursor from './components/InteractiveCursor';
+import { useState, Suspense, lazy } from 'react';
 import AutoScrollHandler from './components/AutoScrollHandler';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import SplineBot from './components/SplineBot';
-import MediaShowcase from './components/MediaShowcase';
+// import Hero from './components/Hero';
+// Lazy load heavy components
+const SplineBot = lazy(() => import('./components/SplineBot'));
+const InteractiveCursor = lazy(() => import('./components/InteractiveCursor'));
+const MediaShowcase = lazy(() => import('./components/MediaShowcase'));
+
 import WhatAitelzCovers from './components/WhatAitelzCovers';
 import CostComparison from './components/CostComparison';
 import Pricing from './components/Pricing';
@@ -19,11 +21,17 @@ function App() {
     <div className="App">
       <AutoScrollHandler />
       <Header />
-      <SplineBot />
+      <Suspense fallback={<div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading 3D Experience...</div>}>
+        <SplineBot />
+      </Suspense>
       {/* <Hero /> - Temporarily removed, file kept */}
-      <MediaShowcase />
+      <Suspense fallback={<div style={{ height: '200px' }}></div>}>
+        <MediaShowcase />
+      </Suspense>
       <div style={{ position: 'relative' }}>
-        <InteractiveCursor />
+        <Suspense fallback={null}>
+          <InteractiveCursor />
+        </Suspense>
         <div style={{ position: 'relative', zIndex: 1, pointerEvents: 'none' }}>
           {/* pointerEvents none on wrapper to let clicks pass to cursor if needed, but wait, 
                  actually we want the content to be interactive. 
