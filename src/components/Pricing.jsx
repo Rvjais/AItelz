@@ -13,14 +13,14 @@ const Pricing = () => {
       monthlyPrice: 19999,
       minutes: '2,000',
       concurrentCalls: '10',
-      borderColor: '#3B82F6'
+      borderColor: '#F97316'
     },
     {
       name: 'Medium',
       monthlyPrice: 69999,
       minutes: '10,000',
       concurrentCalls: '20',
-      borderColor: '#A855F7',
+      borderColor: '#F97316',
       popular: true
     },
     {
@@ -89,7 +89,7 @@ const Pricing = () => {
             whileHover={{ y: -5 }}
             style={{ height: '100%' }}
           >
-            <PricingCard borderColor="#10b981" className="pilot-card-gsap">
+            <PricingCard borderColor="#F97316" className="pilot-card-gsap">
               <h3>1-Week Live Pilot</h3>
               <div className="pilot-price">₹5,000 <span>+ taxes</span></div>
               <ul className="pilot-features">

@@ -115,8 +115,9 @@ const PricingCard = ({ children, borderColor = '#000', className = '' }) => {
                     <svg width="100%" height="100%" viewBox="0 0 340 540" preserveAspectRatio="none">
                         <defs>
                             <linearGradient id={`grad1-${cardId}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#1e293b" />
-                                <stop offset="100%" stopColor="#0f172a" />
+                                <stop offset="0%" stopColor="#2c2c2c" />
+                                <stop offset="50%" stopColor="#1a1a1a" />
+                                <stop offset="100%" stopColor="#000000" />
                             </linearGradient>
 
                             <linearGradient id={`grad2-${cardId}`} x1="0%" y1="0%" x2="100%" y2="100%">
