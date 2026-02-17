@@ -31,17 +31,7 @@
 }
 
 /* Top left corner */
-.info-box.top-left {
-    top: 100px;
-    left: 30px;
-}
 
-/* Top right corner */
-.info-box.top-right {
-    top: 100px;
-    right: 30px;
-    text-align: right;
-}
 
 /* Bottom left corner */
 .info-box.bottom-left {
@@ -50,13 +40,85 @@
 }
 
 /* Bottom right corner */
+
+
+/* Bottom text overrides for larger scale */
+/* Bottom text overrides for larger scale */
+.info-box.bottom-left,
 .info-box.bottom-right {
-    bottom: 30px;
-    right: 30px;
-    /* text-align: right; Remove text align right as the carousel controls alignment */
-    width: 300px;
-    /* Increased from max-width 260px implicitly */
-    max-width: 320px;
+    width: 380px;
+    max-width: 400px;
+    padding: 24px 28px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Bottom left position */
+.info-box.bottom-left {
+    bottom: 40px;
+    left: 40px;
+    gap: 12px;
+    /* Scale up slightly */
+    transform: scale(1.1);
+    transform-origin: bottom left;
+}
+
+/* Bottom right corner */
+.info-box.bottom-right {
+    bottom: 40px;
+    right: 40px;
+    /* Scale up slightly */
+    transform: scale(1.1);
+    transform-origin: bottom right;
+}
+
+
+.voice-input-container {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.voice-agent-input {
+    flex: 1;
+    padding: 14px 16px;
+    /* Larger padding */
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    /* Larger font */
+    outline: none;
+    transition: all 0.2s ease;
+    min-width: 0;
+    /* Prevent overflow */
+}
+
+.voice-agent-input:focus {
+    border-color: #ff8c00;
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2);
+}
+
+.voice-agent-btn {
+    padding: 14px 20px;
+    /* Larger padding */
+    background: #ff8c00;
+    /* Orange theme */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    /* Larger font */
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.voice-agent-btn:hover {
+    background: #e67e00;
 }
 
 .info-box h3 {
@@ -110,9 +172,12 @@
         left: 20px;
     }
 
-    .info-box.top-right,
     .info-box.bottom-right {
         right: 20px;
+    }
+
+    .info-box.bottom-left {
+        left: 20px;
     }
 
     .info-box.top-left,
@@ -140,8 +205,11 @@
     .spline-wrapper {
         height: 100vh;
         min-height: 100vh;
-        overflow: hidden;
+        overflow: visible;
+        /* Allowing elements below */
         position: relative;
+        margin-bottom: 140px;
+        /* Space for voices below */
     }
 
     /* Target the video specifically if needed, or rely on class */
@@ -181,34 +249,52 @@
 
     .info-box.bottom-left {
         position: absolute;
-        bottom: 80px;
-        left: 10px;
+        bottom: 20px;
+        /* Moved to bottom as requested */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        /* Full width */
+        max-width: none;
+        /* Remove constraint */
+        text-align: center;
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        z-index: 15;
     }
 
-    /* The voice demos section */
+    /* The voice demos section - moved below hero */
     .info-box.bottom-right {
         position: absolute;
-        bottom: 0;
+        top: 100%;
+        /* Below hero section */
+        bottom: auto;
         left: 0;
         right: 0;
         width: 100%;
         max-width: none;
         margin: 0;
         text-align: center;
-        /* Glassmorphic Orange Background */
-        background: rgba(255, 166, 0, 0.15);
-        /* Orange tint */
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        /* Glassmorphic Orange Background - Increased opacity */
+        background: rgba(255, 255, 255, 0.95);
+        /* Nearly solid white or very light orange */
         border-top: 1px solid rgba(255, 166, 0, 0.3);
         border-left: none;
         border-right: none;
-        border-bottom: none;
-        box-shadow: 0 -4px 32px 0 rgba(255, 140, 0, 0.2);
+        border-bottom: 1px solid rgba(255, 166, 0, 0.1);
+        box-shadow: 0 -4px 12px 0 rgba(0, 0, 0, 0.05);
+        /* Subtle shadow on top */
         z-index: 10;
-        border-radius: 24px 24px 0 0;
-        padding-bottom: 20px;
-        /* Add padding for safe area */
+        border-radius: 0;
+        padding: 24px 0;
+        /* More padding */
+        min-height: 160px;
+        /* Min height instead of fixed */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .info-box h3 {

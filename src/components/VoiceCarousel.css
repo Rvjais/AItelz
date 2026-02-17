@@ -58,8 +58,22 @@
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
+/* Hide scrollbar */
 .carousel-track::-webkit-scrollbar {
     display: none;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-track {
+        mask-image: none;
+        /* User complained about cut out */
+        -webkit-mask-image: none;
+        justify-content: center;
+        /* Center items if possible */
+        padding: 20px 20px;
+        /* Increase vertical padding to avoid clipping active scaled item */
+    }
 }
 
 .voice-card {

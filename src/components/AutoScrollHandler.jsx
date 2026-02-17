@@ -25,15 +25,15 @@ const AutoScrollHandler = () => {
                 animationFrameId = requestAnimationFrame(scrollUp);
 
             } else if (clientY > innerHeight - threshold) {
-                // Scroll Down
-                const intensity = (clientY - (innerHeight - threshold)) / threshold;
-                const speed = intensity * maxSpeed;
+                // Scroll Down DISABLED as per user request to allow interaction with bottom elements
+                // const intensity = (clientY - (innerHeight - threshold)) / threshold;
+                // const speed = intensity * maxSpeed;
 
-                const scrollDown = () => {
-                    window.scrollBy(0, speed);
-                    animationFrameId = requestAnimationFrame(scrollDown);
-                };
-                animationFrameId = requestAnimationFrame(scrollDown);
+                // const scrollDown = () => {
+                //     window.scrollBy(0, speed);
+                //     animationFrameId = requestAnimationFrame(scrollDown);
+                // };
+                // animationFrameId = requestAnimationFrame(scrollDown);
             }
         };
 

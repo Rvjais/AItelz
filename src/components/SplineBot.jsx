@@ -1,5 +1,6 @@
 import Spline from '@splinetool/react-spline';
 import VoiceCarousel from './VoiceCarousel';
+import { initiateCall } from '../services/bolnaService';
 import { useState, useEffect, useRef } from 'react';
 import './SplineBot.css';
 
@@ -37,10 +38,41 @@ export default function SplineBot() {
     const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
     const videoRef = useRef(null);
 
+    // Voice Agent State
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [callStatus, setCallStatus] = useState('idle'); // idle, loading, success, error
+    const [statusMessage, setStatusMessage] = useState('');
+
     const handleTimeUpdate = () => {
         if (videoRef.current && videoRef.current.currentTime >= 15) {
             videoRef.current.currentTime = 0;
             videoRef.current.play();
+        }
+    };
+
+    const handleCall = async () => {
+        if (!phoneNumber) {
+            setStatusMessage('Please enter a phone number.');
+            return;
+        }
+
+        setCallStatus('loading');
+        setStatusMessage('Initiating call...');
+
+        try {
+            await initiateCall(phoneNumber);
+            setCallStatus('success');
+            setStatusMessage('Call initiated successfully! You should receive a call shortly.');
+            setPhoneNumber('');
+        } catch (error) {
+            setCallStatus('error');
+            setStatusMessage(`Failed to initiate call: ${error.message}`);
+        } finally {
+            // Reset status after a few seconds
+            setTimeout(() => {
+                setCallStatus('idle');
+                setStatusMessage('');
+            }, 5000);
         }
     };
 
@@ -72,27 +104,39 @@ export default function SplineBot() {
                 <Spline scene="/desktop.splinecode" />
             )}
 
-            {/* Desktop: Top left info */}
-            <div className="info-box top-left">
-                <h3><Typewriter text="Smart Conversations" delay={40} startDelay={300} /></h3>
-                <p><Typewriter text="Natural language AI that understands context and intent." delay={25} startDelay={1200} /></p>
+            {/* Desktop: Bottom Left - Voice Agent Input */}
+            <div className="info-box bottom-left">
+                <p style={{ fontWeight: 600, fontSize: '1.1rem', color: '#222' }}>
+                    Enter your number to talk to our AI Voice Agent
+                </p>
+                <div className="voice-input-container">
+                    <input
+                        type="tel"
+                        placeholder="+91 0000000000"
+                        className="voice-agent-input"
+                        value={phoneNumber}
+                        onChange={(e) => setPhoneNumber(e.target.value)}
+                        disabled={callStatus === 'loading'}
+                    />
+                    <button
+                        className="voice-agent-btn"
+                        onClick={handleCall}
+                        disabled={callStatus === 'loading'}
+                    >
+                        {callStatus === 'loading' ? 'Calling...' : 'Talk'}
+                    </button>
+                </div>
+                {statusMessage && (
+                    <p style={{ fontSize: '0.9rem', color: callStatus === 'error' ? 'red' : 'green', marginTop: '8px', fontWeight: 500 }}>
+                        {statusMessage}
+                    </p>
+                )}
             </div>
-
-            {/* Desktop: Top right info */}
-            <div className="info-box top-right">
-                <h3><Typewriter text="Enterprise Ready" delay={40} startDelay={600} /></h3>
-                <p><Typewriter text="Secure, scalable, and compliant with industry standards." delay={25} startDelay={1600} /></p>
-            </div>
-
-            {/* Desktop: Bottom left info - REMOVED as per user request */}
-
 
             {/* Desktop: Bottom right info */}
             <div className="info-box bottom-right">
                 <VoiceCarousel />
             </div>
-
-
         </div>
     );
 }

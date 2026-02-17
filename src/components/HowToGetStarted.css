@@ -47,7 +47,7 @@
 }
 
 .connector-path-fill {
-  stroke: #000000;
+  stroke: #ff8c00;
   stroke-width: 4px;
   fill: none;
   stroke-linecap: round;
@@ -89,8 +89,8 @@
 }
 
 .step-card:hover {
-  border-color: #000000;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: #ff8c00;
+  box-shadow: 0 10px 15px -3px rgba(255, 140, 0, 0.1);
   transform: translateY(-5px);
 }
 
@@ -98,7 +98,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #000000;
+  background: #ff8c00;
   color: #ffffff;
   display: flex;
   align-items: center;
