@@ -39,9 +39,37 @@ export default function SplineBot() {
     const videoRef = useRef(null);
 
     // Voice Agent State
-    const [phoneNumber, setPhoneNumber] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('+91 ');
     const [callStatus, setCallStatus] = useState('idle'); // idle, loading, success, error
     const [statusMessage, setStatusMessage] = useState('');
+
+    // Phone number formatting
+    const handlePhoneChange = (e) => {
+        const input = e.target.value;
+        const digits = input.replace(/\D/g, '');
+
+        let cleanDigits = digits;
+        // Ensure it starts with 91
+        if (!cleanDigits.startsWith('91')) {
+            cleanDigits = '91' + cleanDigits;
+        }
+
+        // Limit to 12 digits (91 + 10 digits)
+        if (cleanDigits.length > 12) {
+            cleanDigits = cleanDigits.slice(0, 12);
+        }
+
+        // Format as +91 XXXXX XXXXX
+        let formatted = '+91';
+        if (cleanDigits.length > 2) {
+            formatted += ' ' + cleanDigits.slice(2, 7);
+        }
+        if (cleanDigits.length > 7) {
+            formatted += ' ' + cleanDigits.slice(7, 12);
+        }
+
+        setPhoneNumber(formatted);
+    };
 
     const handleTimeUpdate = () => {
         if (videoRef.current && videoRef.current.currentTime >= 15) {
@@ -115,7 +143,7 @@ export default function SplineBot() {
                         placeholder="+91 0000000000"
                         className="voice-agent-input"
                         value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}
+                        onChange={handlePhoneChange}
                         disabled={callStatus === 'loading'}
                     />
                     <button
