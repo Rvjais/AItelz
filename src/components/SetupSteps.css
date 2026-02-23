@@ -3,6 +3,10 @@
 /* ===== Section ===== */
 .ss-section {
     background-color: #ffffff;
+    background-image: url('../assets/background/553a4c89-60b6-48ce-88e7-4dcbe8613c3b.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 3rem 0.75rem;
 }
 
@@ -174,7 +178,7 @@
 }
 
 .ss-step-card.ss-active {
-    border-color: #000000;
+    border-color: #F97316;
     background-color: #f9fafb;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
 }
@@ -202,13 +206,13 @@
 }
 
 .ss-icon-active {
-    background: linear-gradient(135deg, #4b5563, #374151);
+    background: linear-gradient(135deg, #F97316, #ea580c);
     color: #ffffff;
 }
 
 .ss-icon-inactive {
-    background-color: #f3f4f6;
-    color: #4b5563;
+    background-color: #fff7ed;
+    color: #F97316;
 }
 
 /* Step Text */
@@ -266,7 +270,7 @@
 }
 
 .ss-step-card.ss-active .ss-step-arrow svg {
-    color: #000000;
+    color: #F97316;
 }
 
 .ss-step-card:hover .ss-step-arrow svg {
@@ -303,7 +307,7 @@
 .ss-detail-image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #4b5563, #374151);
+    background: linear-gradient(135deg, #F97316, #ea580c);
     opacity: 0.2;
 }
 
@@ -321,7 +325,7 @@
 .ss-detail-icon {
     width: 3rem;
     height: 3rem;
-    background: linear-gradient(135deg, #4b5563, #374151);
+    background: linear-gradient(135deg, #F97316, #ea580c);
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
@@ -367,7 +371,7 @@
 .ss-bullet-check {
     width: 1.5rem;
     height: 1.5rem;
-    background: linear-gradient(135deg, #4b5563, #374151);
+    background: linear-gradient(135deg, #F97316, #ea580c);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -400,7 +404,7 @@
 }
 
 .ss-detail-btn {
-    background: linear-gradient(135deg, #4b5563, #374151);
+    background: linear-gradient(135deg, #F97316, #ea580c);
     color: #ffffff;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -470,7 +474,7 @@
 .ss-mobile-image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #4b5563, #374151);
+    background: linear-gradient(135deg, #F97316, #ea580c);
     opacity: 0.2;
 }
 
@@ -480,7 +484,7 @@
     left: 0.75rem;
     width: 2rem;
     height: 2rem;
-    background: linear-gradient(135deg, #4b5563, #374151);
+    background: linear-gradient(135deg, #F97316, #ea580c);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -557,7 +561,7 @@
 .ss-mobile-icon {
     width: 2.5rem;
     height: 2.5rem;
-    background: linear-gradient(135deg, #4b5563, #374151);
+    background: linear-gradient(135deg, #F97316, #ea580c);
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
@@ -642,7 +646,7 @@
 .ss-mobile-check {
     width: 1rem;
     height: 1rem;
-    background: linear-gradient(135deg, #4b5563, #374151);
+    background: linear-gradient(135deg, #F97316, #ea580c);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -685,7 +689,7 @@
 
 .ss-mobile-btn {
     width: 100%;
-    background: linear-gradient(135deg, #4b5563, #374151);
+    background: linear-gradient(135deg, #F97316, #ea580c);
     color: #ffffff;
     border: none;
     padding: 0.75rem;
@@ -734,7 +738,7 @@
 }
 
 .ss-cta-banner {
-    background-color: #000000;
+    background: linear-gradient(135deg, #F97316, #ea580c);
     border-radius: 1rem;
     padding: 1.5rem;
     color: #ffffff;

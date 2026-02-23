@@ -1,6 +1,10 @@
 .how-to-get-started {
   padding: var(--spacing-3xl) var(--spacing-lg);
   background: #ffffff;
+  background-image: url('../assets/background/553a4c89-60b6-48ce-88e7-4dcbe8613c3b.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-top: 1px solid #e5e5e5;
   overflow: hidden;
 }
