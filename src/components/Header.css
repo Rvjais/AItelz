@@ -37,7 +37,7 @@
   letter-spacing: -0.03em;
   cursor: pointer;
   text-decoration: none;
-  background: linear-gradient(135deg, #000000 0%, #f97316 100%);
+  background: linear-gradient(135deg, #000000 0%, #276ec0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -66,13 +66,13 @@
 }
 
 .nav .nav-link:hover {
-  color: #f97316;
-  /* Orange 500 */
+  color: #276ec0;
+  /* Deep Blue 500 */
 }
 
 /* Demo Button - Gradient & Shadow */
 .demo-button {
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  background: linear-gradient(135deg, #276ec0 0%, #222b92 100%);
   color: #ffffff;
   border: none;
   padding: 0.75rem 1.75rem;
@@ -82,13 +82,13 @@
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 4px 12px rgba(39, 110, 192, 0.3);
 }
 
 .demo-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
-  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  box-shadow: 0 8px 20px rgba(39, 110, 192, 0.4);
+  background: linear-gradient(135deg, #222b92 0%, #1d257e 100%);
 }
 
 .mobile-menu-btn {
@@ -125,9 +125,9 @@
 }
 
 .mobile-nav a:hover {
-  background-color: #fff7ed;
-  /* Light orange background on hover */
-  color: #ea580c;
+  background-color: rgba(39, 110, 192, 0.05);
+  /* Light blue background on hover */
+  color: #222b92;
 }
 
 .mobile-nav a:last-child {
@@ -211,8 +211,8 @@
 
   .mobile-nav a:hover,
   .mobile-nav a:active {
-    background-color: rgba(249, 115, 22, 0.08);
-    color: #ea580c;
+    background-color: rgba(39, 110, 192, 0.08);
+    color: #222b92;
   }
 
   .mobile-nav .demo-button {
@@ -224,6 +224,6 @@
     padding: 0.5rem 1.25rem;
     font-size: 0.85rem;
     min-width: 130px;
-    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.25);
+    box-shadow: 0 4px 14px rgba(39, 110, 192, 0.25);
   }
 }

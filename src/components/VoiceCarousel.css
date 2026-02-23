@@ -96,7 +96,7 @@
 .voice-visual {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -107,7 +107,7 @@
 }
 
 .voice-card.active .voice-visual {
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    background: linear-gradient(135deg, #276ec0 0%, #222b92 100%);
     color: white;
 }
 

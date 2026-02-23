@@ -22,6 +22,21 @@
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
+.card-svg-.popular-badge {
+    position: absolute;
+    top: -12px;
+    right: 2rem;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 99px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(39, 110, 192, 0.4);
+}
+
 .card-content-layer {
     position: relative;
     z-index: 1;
@@ -66,14 +81,14 @@
 }
 
 .card-content-layer .pilot-features li::before {
-    color: #F97316 !important;
-    /* Orange checkmark */
+    color: #276ec0 !important;
+    /* Deep Blue checkmark */
 }
 
 /* Pilot Card Button Override within GSAP Card */
 .card-content-layer .pilot-button {
-    background: #F97316;
-    /* Orange for Pilot distinction */
+    background: #276ec0;
+    /* Blue for Pilot distinction */
     color: white;
     border: none;
     padding: 0.875rem 1.5rem;
@@ -86,8 +101,8 @@
 }
 
 .card-content-layer .pilot-button:hover {
-    background: #EA580C;
-    /* Darker orange */
+    background: #222b92;
+    /* Darker blue */
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 4px 12px rgba(39, 110, 192, 0.4);
 }

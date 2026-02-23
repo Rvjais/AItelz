@@ -40,10 +40,10 @@
   --color-border-hover: #cbd5e1;
   /* Slate 300 */
 
-  --color-accent: #f97316;
-  /* Orange 500 */
-  --color-accent-hover: #ea580c;
-  /* Orange 600 */
+  --color-accent: #276ec0;
+  /* Medium Blue 500 */
+  --color-accent-hover: #222b92;
+  /* Medium Dark Blue 600 */
   --color-accent-text: #ffffff;
 
   /* Spacing */
@@ -89,7 +89,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
 }
 
@@ -97,7 +97,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
   background-color: var(--color-bg-body);
 }
 

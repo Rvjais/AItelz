@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
+import logoImg from '../assets/aitelz_transparent.png';
 import './Footer.css';
 
 const Footer = () => {
   const productLinks = [
     { name: 'Product', href: '#' },
     { name: 'Pricing', href: '#pricing' },
-    { name: 'Live Demo', href: '#' },
-    { name: 'Case Studies', href: '#' }
+    { name: 'Live Demo', href: '#' }
   ];
 
   const companyLinks = [
-    { name: 'About Us', href: '#' },
+    { name: 'About Us', href: 'https://www.rainmindz.com/' },
     { name: 'Contact', href: '#' },
     { name: 'Privacy Policy', href: '#' },
     { name: 'Terms of Service', href: '#' }
@@ -20,6 +20,13 @@ const Footer = () => {
     { name: 'LinkedIn', icon: 'in' },
     { name: 'Twitter', icon: 'tw' },
     { name: 'Instagram', icon: 'ig' }
+  ];
+
+  const rainmindzProducts = [
+    { name: 'AI textbotz', href: '#' },
+    { name: 'AI Ratingz', href: '#' },
+    { name: 'AIcrmz', href: '#' },
+    { name: 'AIfilmz', href: '#' }
   ];
 
   return (
@@ -33,7 +40,9 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="footer-logo">AITELZ</div>
+          <div className="footer-logo">
+            <img src={logoImg} alt="AItelz Logo" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
+          </div>
           <p className="footer-description">
             Conversational AI agents for businesses. Call automation, bookings, and always-on customer service. No more human staffing.
           </p>
@@ -87,11 +96,15 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <h4>Stay Updated</h4>
-          <p>Join our newsletter for the latest AI updates.</p>
-          <div className="newsletter-form">
-            <input type="email" placeholder="Enter your email" />
-            <button>Subscribe</button>
+          <div className="rainmindz-section">
+            <h4>Part of Rainmindz</h4>
+            <ul className="rainmindz-list">
+              {rainmindzProducts.map((product, index) => (
+                <li key={index}>
+                  <a href={product.href}>{product.name}</a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="footer-social">

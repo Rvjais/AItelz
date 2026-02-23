@@ -163,18 +163,18 @@
 }
 
 .tape-caution .tape-item {
-    background-color: #facc15;
-    /* yellow-400 */
-    color: black;
-    border-color: black;
+    background-color: #276ec0;
+    /* deep blue */
+    color: white;
+    border-color: #1d257e;
 }
 
 .tape-restricted .tape-item {
-    background-color: #dc2626;
-    /* red-600 */
+    background-color: #222b92;
+    /* darker blue */
     color: white;
-    border-color: #7f1d1d;
-    /* red-900 */
+    border-color: #181e68;
+    /* darkest blue */
 }
 
 /* Animations */

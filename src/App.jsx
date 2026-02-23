@@ -11,6 +11,8 @@ import WhatAitelzCovers from './components/WhatAitelzCovers';
 import CostComparison from './components/CostComparison';
 import Pricing from './components/Pricing';
 import CustomDashboard from './components/CustomDashboard';
+import BusinessSolution from './components/BusinessSolution';
+import SetupSteps from './components/SetupSteps';
 import HowToGetStarted from './components/HowToGetStarted';
 import InteractiveFlow from './components/InteractiveFlow';
 import CTA from './components/CTA';
@@ -46,6 +48,8 @@ function App() {
             <HowToGetStarted />
             <CustomDashboard />
             <InteractiveFlow />
+            <BusinessSolution />
+            <SetupSteps />
             <Pricing />
             <CostComparison />
             <CTA />

@@ -97,15 +97,15 @@
 }
 
 .voice-agent-input:focus {
-    border-color: #ff8c00;
-    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2);
+    border-color: #276ec0;
+    box-shadow: 0 0 0 3px rgba(39, 110, 192, 0.2);
 }
 
 .voice-agent-btn {
     padding: 14px 20px;
     /* Larger padding */
-    background: #ff8c00;
-    /* Orange theme */
+    background: #276ec0;
+    /* Blue theme */
     color: white;
     border: none;
     border-radius: 10px;
@@ -118,7 +118,7 @@
 }
 
 .voice-agent-btn:hover {
-    background: #e67e00;
+    background: #222b92;
 }
 
 .info-box h3 {
@@ -277,13 +277,13 @@
         max-width: none;
         margin: 0;
         text-align: center;
-        /* Glassmorphic Orange Background - Increased opacity */
+        /* Glassmorphic Blue Background - Increased opacity */
         background: rgba(255, 255, 255, 0.95);
-        /* Nearly solid white or very light orange */
-        border-top: 1px solid rgba(255, 166, 0, 0.3);
+        /* Nearly solid white or very light blue */
+        border-top: 1px solid rgba(39, 110, 192, 0.3);
         border-left: none;
         border-right: none;
-        border-bottom: 1px solid rgba(255, 166, 0, 0.1);
+        border-bottom: 1px solid rgba(39, 110, 192, 0.1);
         box-shadow: 0 -4px 12px 0 rgba(0, 0, 0, 0.05);
         /* Subtle shadow on top */
         z-index: 10;
