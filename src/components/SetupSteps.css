@@ -73,7 +73,7 @@
 }
 
 /* Gradients reusing theme */
-.bg-gradient-orange {
+.bg-gradient-blue {
     background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
     color: white;
 }
@@ -88,7 +88,7 @@
     color: white;
 }
 
-.bg-gradient-orange-overlay {
+.bg-gradient-blue-overlay {
     background: linear-gradient(to top, var(--color-accent) 0%, transparent 100%);
 }
 

@@ -121,7 +121,7 @@ const SetupSteps = () => {
                                     onClick={() => setActiveStep(step.id)}
                                 >
                                     <div className="step-card-content">
-                                        <div className={`step-icon ${activeStep === step.id ? 'bg-gradient-orange' : 'bg-gray-100'}`}>
+                                        <div className={`step-icon ${activeStep === step.id ? 'bg-gradient-blue' : 'bg-gray-100'}`}>
                                             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                                                 {step.icon}
                                             </svg>
@@ -148,11 +148,11 @@ const SetupSteps = () => {
                             <div className="details-card shadow-xl">
                                 <div className="details-image-container">
                                     <img src={steps[activeStep - 1].image} alt={steps[activeStep - 1].title} />
-                                    <div className="image-overlay bg-gradient-orange-overlay"></div>
+                                    <div className="image-overlay bg-gradient-blue-overlay"></div>
                                 </div>
                                 <div className="details-content">
                                     <div className="details-header">
-                                        <div className="details-icon bg-gradient-orange">
+                                        <div className="details-icon bg-gradient-blue">
                                             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                                                 {steps[activeStep - 1].icon}
                                             </svg>
@@ -166,7 +166,7 @@ const SetupSteps = () => {
                                     <ul className="details-bullets">
                                         {steps[activeStep - 1].bullets.map((bullet, idx) => (
                                             <li key={idx}>
-                                                <div className="bullet-icon bg-gradient-orange">
+                                                <div className="bullet-icon bg-gradient-blue">
                                                     <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                                                         <polyline points="20 6 9 17 4 12"></polyline>
                                                     </svg>
@@ -178,7 +178,7 @@ const SetupSteps = () => {
 
                                     <div className="details-footer">
                                         <span className="details-time">Estimated time: {steps[activeStep - 1].time}</span>
-                                        <button className="details-btn bg-gradient-orange text-white hover:shadow-lg transition-all"
+                                        <button className="details-btn bg-gradient-blue text-white hover:shadow-lg transition-all"
                                             onClick={() => window.open("https://wa.me/919648165493?text=Hello%20AItelz%20im%20intrested%20i%20the%20voice%20chatbot", "_blank")}>
                                             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                                                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
@@ -203,7 +203,7 @@ const SetupSteps = () => {
                                 <div className="mobile-image-container">
                                     <img src={step.image} alt={step.title} />
                                     <div className="image-overlay bg-gradient-mix-overlay"></div>
-                                    <div className="mobile-step-number bg-gradient-orange">
+                                    <div className="mobile-step-number bg-gradient-blue">
                                         <span>{step.id}</span>
                                     </div>
                                     <div className="mobile-step-time">
@@ -213,7 +213,7 @@ const SetupSteps = () => {
 
                                 <div className="mobile-step-content">
                                     <div className="mobile-step-header">
-                                        <div className="mobile-icon bg-gradient-orange">
+                                        <div className="mobile-icon bg-gradient-blue">
                                             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                                                 {step.icon}
                                             </svg>
@@ -227,7 +227,7 @@ const SetupSteps = () => {
                                     <ul className="mobile-bullets">
                                         {step.bullets.map((bullet, idx) => (
                                             <li key={idx}>
-                                                <div className="bullet-icon bg-gradient-orange">
+                                                <div className="bullet-icon bg-gradient-blue">
                                                     <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                                                         <polyline points="20 6 9 17 4 12"></polyline>
                                                     </svg>
@@ -237,7 +237,7 @@ const SetupSteps = () => {
                                         ))}
                                     </ul>
 
-                                    <button className="mobile-start-btn bg-gradient-orange hover:shadow-lg"
+                                    <button className="mobile-start-btn bg-gradient-blue hover:shadow-lg"
                                         onClick={() => window.open("https://wa.me/919648165493?text=Hello%20AItelz%20im%20intrested%20i%20the%20voice%20chatbot", "_blank")}>
                                         <span>Start Step {step.id}</span>
                                         <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">

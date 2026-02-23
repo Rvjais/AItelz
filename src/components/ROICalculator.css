@@ -147,8 +147,8 @@
 }
 
 .result-value.highlight {
-    color: #10b981;
-    /* Green for savings */
+    color: #F97316;
+    /* Orange for savings */
 }
 
 .result-note {
@@ -187,7 +187,7 @@
 }
 
 .breakdown-item.highlight span:last-child {
-    color: #10b981;
+    color: #F97316;
     font-weight: 700;
 }
 
