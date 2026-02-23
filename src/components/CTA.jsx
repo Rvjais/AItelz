@@ -35,8 +35,9 @@ const CTA = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          whileHover={{ scale: 1.05, boxShadow: "0 8px 24px rgba(59, 130, 246, 0.4)" }}
+          whileHover={{ scale: 1.05, boxShadow: "0 8px 24px rgba(39, 110, 192, 0.4)" }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => window.open("https://wa.me/919648165493?text=Hello%20AItelz%20im%20intrested%20i%20the%20voice%20chatbot", "_blank")}
         >
           Contact Sales
         </motion.button>

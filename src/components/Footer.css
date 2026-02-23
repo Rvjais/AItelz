@@ -1,6 +1,6 @@
 .footer {
-  background: #000000;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #090e17 0%, #1e293b 100%);
+  border-top: 1px solid var(--color-accent);
   padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-lg);
   position: relative;
   z-index: 10;
@@ -136,8 +136,8 @@
 }
 
 .newsletter-form button:hover {
-  background: #e4e4e7;
-  /* Zinc 200 */
+  background: var(--color-accent);
+  color: white;
   transform: translateY(-1px);
 }
 
@@ -164,9 +164,9 @@
 }
 
 .social-icon:hover {
-  background: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
 }
 
 /* Responsive */

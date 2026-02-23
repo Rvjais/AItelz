@@ -81,7 +81,8 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #000;
+    background: var(--color-accent);
+    /* Updated to true blue */
     cursor: pointer;
     border: 2px solid #fff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -123,9 +124,9 @@
 }
 
 .result-card.yearly {
-    background: #000;
+    background: linear-gradient(135deg, #090e17 0%, #1e293b 100%);
     color: #fff;
-    border: none;
+    border: 1px solid var(--color-accent);
 }
 
 .result-label {
@@ -147,8 +148,8 @@
 }
 
 .result-value.highlight {
-    color: #F97316;
-    /* Orange for savings */
+    color: var(--color-accent);
+    /* Blue for savings */
 }
 
 .result-note {
@@ -187,7 +188,7 @@
 }
 
 .breakdown-item.highlight span:last-child {
-    color: #F97316;
+    color: var(--color-accent);
     font-weight: 700;
 }
 

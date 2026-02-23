@@ -11,6 +11,23 @@ const Header = ({ onNavigateToCursor }) => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleScroll = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      // Add a slight offset for the fixed header
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <motion.header
       className="header"
@@ -30,15 +47,19 @@ const Header = ({ onNavigateToCursor }) => {
 
         {/* Desktop Nav */}
         <nav className="nav desktop-nav">
-          <motion.a href="#demo" className="nav-link" whileHover={{ scale: 1.05 }}>Demo</motion.a>
-          <motion.a href="#pricing" className="nav-link" whileHover={{ scale: 1.05 }}>Pricing</motion.a>
-          <motion.a href="#roi" className="nav-link" whileHover={{ scale: 1.05 }}>ROI Calculator</motion.a>
+          <motion.a href="#flow" onClick={(e) => handleScroll(e, 'flow')} className="nav-link" whileHover={{ scale: 1.05 }}>Flow</motion.a>
+          <motion.a href="#business-solution" onClick={(e) => handleScroll(e, 'business-solution')} className="nav-link" whileHover={{ scale: 1.05 }}>Solutions</motion.a>
+          <motion.a href="#setup-steps" onClick={(e) => handleScroll(e, 'setup-steps')} className="nav-link" whileHover={{ scale: 1.05 }}>Setup</motion.a>
+          <motion.a href="#pricing" onClick={(e) => handleScroll(e, 'pricing')} className="nav-link" whileHover={{ scale: 1.05 }}>Pricing</motion.a>
+          <motion.a href="#roi" onClick={(e) => handleScroll(e, 'roi')} className="nav-link" whileHover={{ scale: 1.05 }}>ROI Calculator</motion.a>
           <motion.button
             className="demo-button"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Book a Demo
+            <a href="https://wa.me/919648165493?text=Hello%20AItelz%20im%20intrested%20i%20the%20voice%20chatbot" target="_blank" style={{ color: 'white', textDecoration: 'none' }}>
+              Book a Demo
+            </a>
           </motion.button>
         </nav>
 
@@ -64,12 +85,15 @@ const Header = ({ onNavigateToCursor }) => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <a href="#demo" onClick={toggleMenu}>Demo</a>
-            <a href="#pricing" onClick={toggleMenu}>Pricing</a>
-            <a href="#roi" onClick={toggleMenu}>ROI Calculator</a>
-            <button className="demo-button" ><a href="https://wa.me/919648165493?text=Hello%20AItelz%20im%20intrested%20i%20the%20voice%20chatbot" target="_blank">
-              Book a Demo
-            </a>
+            <a href="#flow" onClick={(e) => handleScroll(e, 'flow')}>Flow</a>
+            <a href="#business-solution" onClick={(e) => handleScroll(e, 'business-solution')}>Solutions</a>
+            <a href="#setup-steps" onClick={(e) => handleScroll(e, 'setup-steps')}>Setup</a>
+            <a href="#pricing" onClick={(e) => handleScroll(e, 'pricing')}>Pricing</a>
+            <a href="#roi" onClick={(e) => handleScroll(e, 'roi')}>ROI Calculator</a>
+            <button className="demo-button" >
+              <a href="https://wa.me/919648165493?text=Hello%20AItelz%20im%20intrested%20i%20the%20voice%20chatbot" target="_blank" style={{ color: 'white', textDecoration: 'none' }}>
+                Book a Demo
+              </a>
             </button>
           </motion.nav>
         )}

@@ -99,6 +99,19 @@ body {
   min-height: 100vh;
   overflow-x: clip;
   background-color: var(--color-bg-body);
+  /* Premium SAAS Ambient Mesh Background */
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(39, 110, 192, 0.05), transparent 60%),
+    /* AItelz Blue */
+    radial-gradient(circle at 85% 30%, rgba(249, 115, 22, 0.03), transparent 60%),
+    /* Faint Orange */
+    radial-gradient(circle at 50% 100%, rgba(56, 189, 248, 0.04), transparent 60%),
+    /* Light Cyan */
+    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+  background-position: 0 0, 0 0, 0 0, -1px -1px, -1px -1px;
+  background-attachment: fixed;
 }
 
 #root {

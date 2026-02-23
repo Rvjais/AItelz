@@ -34,7 +34,7 @@ const BusinessSolution = () => {
                     >
                         <div className="feature-content">
                             <div className="feature-header">
-                                <div className="feature-icon bg-gradient-orange">
+                                <div className="feature-icon bg-gradient-blue">
                                     <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                                     </svg>
@@ -44,25 +44,25 @@ const BusinessSolution = () => {
                             <p className="feature-desc">Complete AI-powered calling solution with advanced voice technology integration for automated customer interactions</p>
                             <ul className="feature-bullets">
                                 <li>
-                                    <div className="bullet-icon bg-gradient-orange">
+                                    <div className="bullet-icon bg-gradient-blue">
                                         <span>✓</span>
                                     </div>
                                     <span>Advanced AI powered calls</span>
                                 </li>
                                 <li>
-                                    <div className="bullet-icon bg-gradient-orange">
+                                    <div className="bullet-icon bg-gradient-blue">
                                         <span>✓</span>
                                     </div>
                                     <span>Intelligent call routing and management</span>
                                 </li>
                                 <li>
-                                    <div className="bullet-icon bg-gradient-orange">
+                                    <div className="bullet-icon bg-gradient-blue">
                                         <span>✓</span>
                                     </div>
                                     <span>Real-time conversation analytics</span>
                                 </li>
                                 <li>
-                                    <div className="bullet-icon bg-gradient-orange">
+                                    <div className="bullet-icon bg-gradient-blue">
                                         <span>✓</span>
                                     </div>
                                     <span>Automated follow-up sequences</span>

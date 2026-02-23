@@ -1,6 +1,7 @@
 import Spline from '@splinetool/react-spline';
 import VoiceCarousel from './VoiceCarousel';
 import { initiateCall } from '../services/bolnaService';
+import sceneFile from '../assets/scene.splinecode';
 import { useState, useEffect, useRef } from 'react';
 import './SplineBot.css';
 
@@ -129,7 +130,7 @@ export default function SplineBot() {
                     onTimeUpdate={handleTimeUpdate}
                 />
             ) : (
-                <Spline scene="/desktop.splinecode" />
+                <Spline scene={sceneFile} />
             )}
 
             {/* Desktop: Bottom Left - Voice Agent Input */}

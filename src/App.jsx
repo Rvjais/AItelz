@@ -1,16 +1,15 @@
 import { useState, Suspense, lazy } from 'react';
-import AutoScrollHandler from './components/AutoScrollHandler';
+// import AutoScrollHandler from './components/AutoScrollHandler';
 import Header from './components/Header';
 // import Hero from './components/Hero';
 // Lazy load heavy components
 const SplineBot = lazy(() => import('./components/SplineBot'));
-const InteractiveCursor = lazy(() => import('./components/InteractiveCursor'));
 const MediaShowcase = lazy(() => import('./components/MediaShowcase'));
 
 import WhatAitelzCovers from './components/WhatAitelzCovers';
+import BusinessUseCases from './components/BusinessUseCases';
 import CostComparison from './components/CostComparison';
 import Pricing from './components/Pricing';
-import CustomDashboard from './components/CustomDashboard';
 import BusinessSolution from './components/BusinessSolution';
 import SetupSteps from './components/SetupSteps';
 import HowToGetStarted from './components/HowToGetStarted';
@@ -21,7 +20,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
-      <AutoScrollHandler />
+      {/* <AutoScrollHandler /> */}
       <Header />
       <Suspense fallback={<div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading 3D Experience...</div>}>
         <SplineBot />
@@ -31,30 +30,18 @@ function App() {
         <MediaShowcase />
       </Suspense>
       <div style={{ position: 'relative' }}>
-        <Suspense fallback={null}>
-          <InteractiveCursor />
-        </Suspense>
-        <div style={{ position: 'relative', zIndex: 1, pointerEvents: 'none' }}>
-          {/* pointerEvents none on wrapper to let clicks pass to cursor if needed, but wait, 
-                 actually we want the content to be interactive. 
-                 The cursor is purely visual background. 
-                 So content wrapper should have pointerEvents: 'auto' or default. 
-                 If I set pointerEvents: none, buttons won't work.
-                 So keeping default. 
-                 The cursor canvas has pointer-events: none in CSS already.
-             */}
-          <div style={{ pointerEvents: 'auto' }}>
-            <WhatAitelzCovers />
-            <HowToGetStarted />
-            <CustomDashboard />
-            <InteractiveFlow />
-            <BusinessSolution />
-            <SetupSteps />
-            <Pricing />
-            <CostComparison />
-            <CTA />
-            <Footer />
-          </div>
+        {/* Keep content interactive and native cursor visible */}
+        <div style={{ pointerEvents: 'auto' }}>
+          <WhatAitelzCovers />
+          <BusinessUseCases />
+          <HowToGetStarted />
+          <InteractiveFlow />
+          <BusinessSolution />
+          <SetupSteps />
+          <Pricing />
+          <CostComparison />
+          <CTA />
+          <Footer />
         </div>
       </div>
     </div>
