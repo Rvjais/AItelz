@@ -7,11 +7,11 @@ import riyaVoice from '../assets/Voices/riyaVoice.aac';
 import vikramVoice from '../assets/Voices/vikramVoice.aac';
 
 const voiceSamples = [
-  arushiVoice,
-  imranVoice,
-  nehaVoice,
-  riyaVoice,
-  vikramVoice
+  { src: arushiVoice, name: 'Arushi' },
+  { src: imranVoice, name: 'Imran' },
+  { src: nehaVoice, name: 'Neha' },
+  { src: riyaVoice, name: 'Riya' },
+  { src: vikramVoice, name: 'Vikram' }
 ];
 
 const Hero = () => {
@@ -172,7 +172,7 @@ const Hero = () => {
       if (audioRef.current) {
         audioRef.current.pause();
       }
-      const audio = new Audio(voiceSamples[index]);
+      const audio = new Audio(voiceSamples[index].src);
       audioRef.current = audio;
       audio.play();
       setIsPlaying(true);
@@ -524,12 +524,7 @@ const Hero = () => {
           {/* Voice Avatars Row */}
           <div className="flex justify-between items-center gap-1.5 mb-3 px-1">
             {voiceSamples.map((sample, index) => {
-              let rawName = sample.split('/').pop().split('.')[0];
-              let finalName = rawName.replace(/Voice$/i, '');
-              finalName = finalName.charAt(0).toUpperCase() + finalName.slice(1);
-
               const isActive = currentVoiceIndex === index && isPlaying;
-
               return (
                 <div key={index} className="flex flex-col items-center gap-1.5">
                   <button
@@ -550,7 +545,7 @@ const Hero = () => {
                     )}
                   </button>
                   <span className={`text-[10px] sm:text-[11px] font-medium leading-none ${isActive ? 'text-slate-900' : 'text-slate-400'}`}>
-                    {finalName}
+                    {sample.name}
                   </span>
                 </div>
               )
@@ -564,11 +559,7 @@ const Hero = () => {
             </span>
             {isPlaying && currentVoiceIndex !== null && (
               <span className="text-blue-700 font-bold text-[11px] bg-blue-50 px-2.5 py-0.5 rounded-full">
-                {(() => {
-                  let rawName = voiceSamples[currentVoiceIndex].split('/').pop().split('.')[0];
-                  let cleanName = rawName.replace(/Voice$/i, '');
-                  return cleanName.charAt(0).toUpperCase() + cleanName.slice(1);
-                })()}
+                {voiceSamples[currentVoiceIndex].name}
               </span>
             )}
           </div>
