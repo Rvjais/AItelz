@@ -23,10 +23,10 @@ const Footer = () => {
   ];
 
   const rainmindzProducts = [
-    { name: 'AI textbotz', href: '#' },
-    { name: 'AI Ratingz', href: '#' },
-    { name: 'AIcrmz', href: '#' },
-    { name: 'AIfilmz', href: '#' }
+    { name: 'AIfilmz', href: 'https://aifilmz.com/' },
+    { name: 'AIratingz', href: 'https://airatingz.com/' },
+    { name: 'AICRMz', href: 'https://aicrmz.com/' },
+    { name: 'AIllmz', href: 'https://aillmz.com/' }
   ];
 
   return (
@@ -97,7 +97,7 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <div className="rainmindz-section">
-            <h4>Part of Rainmindz</h4>
+            <h4>Part of <a href="https://rainmindz.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Rainmindz</a></h4>
             <ul className="rainmindz-list">
               {rainmindzProducts.map((product, index) => (
                 <li key={index}>

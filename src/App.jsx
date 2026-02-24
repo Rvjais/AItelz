@@ -1,9 +1,8 @@
 import { useState, Suspense, lazy } from 'react';
 // import AutoScrollHandler from './components/AutoScrollHandler';
 import Header from './components/Header';
-// import Hero from './components/Hero';
+import Hero from './components/Hero';
 // Lazy load heavy components
-const SplineBot = lazy(() => import('./components/SplineBot'));
 const MediaShowcase = lazy(() => import('./components/MediaShowcase'));
 
 import WhatAitelzCovers from './components/WhatAitelzCovers';
@@ -22,10 +21,7 @@ function App() {
     <div className="App">
       {/* <AutoScrollHandler /> */}
       <Header />
-      <Suspense fallback={<div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading 3D Experience...</div>}>
-        <SplineBot />
-      </Suspense>
-      {/* <Hero /> - Temporarily removed, file kept */}
+      <Hero />
       <Suspense fallback={<div style={{ height: '200px' }}></div>}>
         <MediaShowcase />
       </Suspense>
