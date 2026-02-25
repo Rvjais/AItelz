@@ -92,14 +92,14 @@ const Hero = () => {
     setCallState('connecting');
 
     try {
-      const response = await fetch('https://api.bolna.ai/call', {
+      const response = await fetch(import.meta.env.VITE_BOLNA_API_URL, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${import.meta.env.VITE_BOLNA_API_KEY}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          agent_id: import.meta.env.VITE_BOLNA_AGENT_ID || '90b201bc-f59d-46b4-8e4f-f1250edd3828',
+          agent_id: import.meta.env.VITE_BOLNA_AGENT_ID,
           recipient_phone_number: stripped
         })
       });
@@ -127,7 +127,7 @@ const Hero = () => {
   const checkCallStatus = async (execId) => {
     if (!execId) return;
     try {
-      const response = await fetch(`https://api.bolna.ai/executions/${execId}`, {
+      const response = await fetch(`${import.meta.env.VITE_BOLNA_BASE_URL}/executions/${execId}`, {
         headers: {
           'Authorization': `Bearer ${import.meta.env.VITE_BOLNA_API_KEY}`
         }
@@ -399,6 +399,13 @@ const Hero = () => {
 
               {/* 1. DIALER UI SCREEN */}
               <div className={`absolute inset-0 flex flex-col justify-end pb-4 z-20 transition-all duration-500 transform ${callState === 'dialing' ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-8 opacity-0 pointer-events-none'}`}>
+
+                {/* CTA Prompt — Try our agent */}
+                <div className="flex flex-col items-center justify-center pt-12 pb-1 px-3 text-center select-none pointer-events-none">
+                  <span className="text-[9px] font-semibold uppercase tracking-[0.18em] text-blue-400 mb-0.5">✦ Live Demo</span>
+                  <p className="text-white text-[11.5px] font-semibold leading-snug">Try our agent now</p>
+                  <p className="text-slate-400 text-[9.5px] font-normal leading-tight mt-0.5">Dial your number below</p>
+                </div>
 
                 {/* Number Display */}
                 <div className="h-10 flex items-center justify-center mb-2 px-2 mt-auto">

@@ -12,7 +12,7 @@ import Pricing from './components/Pricing';
 import BusinessSolution from './components/BusinessSolution';
 import SetupSteps from './components/SetupSteps';
 import HowToGetStarted from './components/HowToGetStarted';
-import InteractiveFlow from './components/InteractiveFlow';
+
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 
@@ -31,7 +31,7 @@ function App() {
           <WhatAitelzCovers />
           <BusinessUseCases />
           <HowToGetStarted />
-          <InteractiveFlow />
+
           <BusinessSolution />
           <SetupSteps />
           <Pricing />

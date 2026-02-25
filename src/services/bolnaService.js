@@ -4,11 +4,13 @@
  * Handles API interactions with Bolna.ai
  */
 
-const API_URL = import.meta.env.VITE_BOLNA_API_URL || 'https://api.bolna.ai/call';
+const API_URL = import.meta.env.VITE_BOLNA_API_URL;
+const BASE_URL = import.meta.env.VITE_BOLNA_BASE_URL;
 
 // Credentials from environment variables
 const AGENT_ID = import.meta.env.VITE_BOLNA_AGENT_ID;
 const API_KEY = import.meta.env.VITE_BOLNA_API_KEY;
+
 
 /**
  * Initiates an outbound call using Bolna Voice AI
