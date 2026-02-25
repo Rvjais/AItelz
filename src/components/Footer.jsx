@@ -47,7 +47,7 @@ const Footer = () => {
             Conversational AI agents for businesses. Call automation, bookings, and always-on customer service. No more human staffing.
           </p>
           <p className="footer-copyright">
-            © 2024 AITELZ.com All rights reserved.
+            © 2026 AITELZ.com All rights reserved.
           </p>
         </motion.div>
 
