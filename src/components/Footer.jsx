@@ -41,7 +41,7 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="footer-logo">
-            <img src={logoImg} alt="AItelz Logo" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
+            <img src={logoImg} alt="AItelz Logo" style={{ height: '48px', width: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
           </div>
           <p className="footer-description">
             Conversational AI agents for businesses. Call automation, bookings, and always-on customer service. No more human staffing.
