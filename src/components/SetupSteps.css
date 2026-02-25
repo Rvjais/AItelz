@@ -178,7 +178,7 @@
 }
 
 .ss-step-card.ss-active {
-    border-color: #F97316;
+    border-color: #2563EB;
     background-color: #f9fafb;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
 }
@@ -206,13 +206,13 @@
 }
 
 .ss-icon-active {
-    background: linear-gradient(135deg, #F97316, #ea580c);
+    background: linear-gradient(135deg, #2563EB, #1d4ed8);
     color: #ffffff;
 }
 
 .ss-icon-inactive {
-    background-color: #fff7ed;
-    color: #F97316;
+    background-color: #eff6ff;
+    color: #2563EB;
 }
 
 /* Step Text */
@@ -270,7 +270,7 @@
 }
 
 .ss-step-card.ss-active .ss-step-arrow svg {
-    color: #F97316;
+    color: #2563EB;
 }
 
 .ss-step-card:hover .ss-step-arrow svg {
@@ -307,7 +307,7 @@
 .ss-detail-image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #F97316, #ea580c);
+    background: linear-gradient(135deg, #2563EB, #1d4ed8);
     opacity: 0.2;
 }
 
@@ -325,7 +325,7 @@
 .ss-detail-icon {
     width: 3rem;
     height: 3rem;
-    background: linear-gradient(135deg, #F97316, #ea580c);
+    background: linear-gradient(135deg, #2563EB, #1d4ed8);
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
@@ -371,7 +371,7 @@
 .ss-bullet-check {
     width: 1.5rem;
     height: 1.5rem;
-    background: linear-gradient(135deg, #F97316, #ea580c);
+    background: linear-gradient(135deg, #2563EB, #1d4ed8);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -404,7 +404,7 @@
 }
 
 .ss-detail-btn {
-    background: linear-gradient(135deg, #F97316, #ea580c);
+    background: linear-gradient(135deg, #2563EB, #1d4ed8);
     color: #ffffff;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -474,7 +474,7 @@
 .ss-mobile-image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #F97316, #ea580c);
+    background: linear-gradient(135deg, #2563EB, #1d4ed8);
     opacity: 0.2;
 }
 
@@ -484,7 +484,7 @@
     left: 0.75rem;
     width: 2rem;
     height: 2rem;
-    background: linear-gradient(135deg, #F97316, #ea580c);
+    background: linear-gradient(135deg, #2563EB, #1d4ed8);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -561,7 +561,7 @@
 .ss-mobile-icon {
     width: 2.5rem;
     height: 2.5rem;
-    background: linear-gradient(135deg, #F97316, #ea580c);
+    background: linear-gradient(135deg, #2563EB, #1d4ed8);
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
@@ -646,7 +646,7 @@
 .ss-mobile-check {
     width: 1rem;
     height: 1rem;
-    background: linear-gradient(135deg, #F97316, #ea580c);
+    background: linear-gradient(135deg, #2563EB, #1d4ed8);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -689,7 +689,7 @@
 
 .ss-mobile-btn {
     width: 100%;
-    background: linear-gradient(135deg, #F97316, #ea580c);
+    background: linear-gradient(135deg, #2563EB, #1d4ed8);
     color: #ffffff;
     border: none;
     padding: 0.75rem;
@@ -738,7 +738,7 @@
 }
 
 .ss-cta-banner {
-    background: linear-gradient(135deg, #F97316, #ea580c);
+    background: linear-gradient(135deg, #2563EB, #1d4ed8);
     border-radius: 1rem;
     padding: 1.5rem;
     color: #ffffff;
