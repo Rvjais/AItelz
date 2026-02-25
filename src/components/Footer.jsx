@@ -16,11 +16,7 @@ const Footer = () => {
     { name: 'Terms of Service', href: '#' }
   ];
 
-  const socialLinks = [
-    { name: 'LinkedIn', icon: 'in' },
-    { name: 'Twitter', icon: 'tw' },
-    { name: 'Instagram', icon: 'ig' }
-  ];
+
 
   const rainmindzProducts = [
     { name: 'AIfilmz', href: 'https://aifilmz.com/' },
@@ -107,20 +103,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-social">
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={index}
-                href="#"
-                className="social-icon"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {/* Simple text representation for now, or actual icons if available */}
-                {social.name.substring(0, 2)}
-              </motion.a>
-            ))}
-          </div>
         </motion.div>
       </div>
     </footer>
